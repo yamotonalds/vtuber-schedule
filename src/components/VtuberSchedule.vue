@@ -67,7 +67,7 @@ async function ocr(image) {
 </script>
 
 <template>
-  <textarea class="source-input" placeholder="ここに画像を貼り付けるか、画像ファイルをドラッグ＆ドロップしてください。" v-on:paste="on_paste" v-on:drop.prevent="on_file_drop" v-on:dragover.prevent readonly />
+  <textarea class="source-input" placeholder="ここに画像を貼り付けるか、画像ファイルをドラッグ＆ドロップしてください。" @paste="on_paste" @drop.prevent="on_file_drop" @dragover.prevent readonly />
   <p>画像の種類: {{ image_type }}</p>
   <img class="input-image" :src="image_data_url" />
   <div class="text-in-image">{{ text_in_image }}</div>
